@@ -21,12 +21,7 @@ set -euo pipefail
 data_dir_root=$(dirname "${data_dir}")
 
 # process data without segments
-dsets_without_segments="
-short-form/basic5000
-short-form/onomatopee300
-short-form/voiceactress100
-simplification
-"
+dsets_without_segments="ceo-voice"
 for dset in ${dsets_without_segments}; do
     # check directory existence
     _data_dir=${data_dir_root}/$(basename "${dset}")
@@ -79,12 +74,7 @@ for dset in ${dsets_without_segments}; do
 done
 
 # process data with segmetns
-dsets_with_segments="
-long-form/katsura-masakazu
-long-form/udon
-long-form/washington-dc
-summarization
-"
+dsets_with_segments=""
 for dset in ${dsets_with_segments}; do
     # check directory existence
     _data_dir=${data_dir_root}/$(basename "${dset}")
